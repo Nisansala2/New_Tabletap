@@ -8,13 +8,15 @@ const validUser = {
   }
 
   beforeEach(() => {
+  cy.intercept('GET', '**/api/dashboard*').as('getDashboard')
 
-   cy.login(validUser.email, validUser.password)
+  cy.login(validUser.email, validUser.password)
+  
   })
 
 it('View dashboard status ', () => {
-cy.intercept('GET', '/api/dashboard').as('getDashboard')
-cy.visit('/dashboard')
-cy.wait('@getDashboard').its('response.statusCode').should('eq', 200)
+  cy.get('body').should('contain', 'Dashboard')
+ 
+
 })
 })

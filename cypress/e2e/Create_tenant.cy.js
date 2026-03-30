@@ -17,7 +17,7 @@ describe('create new teant', () => {
  cy.visit('https://new.tabletap.lk/admin/tenants')
  cy.get('[name="email"]').type(validUser.email)
  cy.get('[name="password"]').type(validUser.password)
-cy.contains('button', 'Sign In to Console').click()
+ cy.contains('button', 'Sign In to Console').click()
 
   })
   
@@ -26,8 +26,8 @@ it('create tenant ', () => {
   cy.contains('h2, h3, div', 'Add New Tenant').should('be.visible')
 
   const uniqueId = Date.now().toString().slice(-6)
-  const tenantName = `${validtenant.name} `
-  const tenantKey = `cypress_tenant`
+  const tenantName = `${validtenant.name},${uniqueId}`
+  const tenantKey = `cypressTenant`
 
   cy.contains('label', 'Tenant Name')
     .parent()

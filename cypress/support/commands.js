@@ -25,8 +25,8 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("login", (email, password) => {
-  cy.visit('https://cypress_tenant.new.tabletap.lk/')
-  cy.get('[name="email"]').type(email)
- cy.get('[name="password"]').type(password)
+cy.visit('https://cypresstenant.new.tabletap.lk/login')
+cy.get('[name="email"]').type(email)
+cy.get('[name="password"]').type(password)
 cy.contains('button', 'Sign In to Console').click()
 });
