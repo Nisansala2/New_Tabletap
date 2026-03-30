@@ -1,0 +1,6 @@
+Artikel-ID,Artikelname,Beschreibung,Kategorie,Preis,Lagerbestand,Hersteller,Verfügbar
+ART001,Stahlrohr 50mm,Stahlrohr für Konstruktionen,Rohre,45.50,250,Stahl GmbH,Ja
+ART002,Befestigungsschrauben M8,Hochwertige Stahlschrauben,Befestigung,12.75,1500,Schraub AG,Ja
+ART003,Aluminiumprofil 45x45,Aluminiumprofil für Maschinen,Profile,32.00,400,Alu Systems,Ja
+ART004,Gummidichtung NBR,Hochtemperatur-Dichtung,Dichtungen,5.50,2000,Dicht-Tech,Ja
+ART005,Elektromotor 3kW,Drehstrommotor 3 Phasen,Motoren,850.00,25,Motor Works,Ja

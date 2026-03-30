@@ -1,0 +1,51 @@
+SupplierID,SupplierName,Email,Country,Amount
+1,Supplier_1,supplier1@example.com,Sri Lanka,3006
+2,Supplier_2,supplier2@example.com,Germany,1270
+3,Supplier_3,supplier3@example.com,Sri Lanka,2553
+4,Supplier_4,supplier4@example.com,Germany,2674
+5,Supplier_5,supplier5@example.com,Sri Lanka,1812
+6,Supplier_6,supplier6@example.com,Germany,3709
+7,Supplier_7,supplier7@example.com,Sri Lanka,3787
+8,Supplier_8,supplier8@example.com,Germany,2521
+9,Supplier_9,supplier9@example.com,Sri Lanka,1016
+10,Supplier_10,supplier10@example.com,Germany,2555
+11,Supplier_11,supplier11@example.com,Sri Lanka,1954
+12,Supplier_12,supplier12@example.com,Germany,2772
+13,Supplier_13,supplier13@example.com,Sri Lanka,2411
+14,Supplier_14,supplier14@example.com,Germany,2036
+15,Supplier_15,supplier15@example.com,Sri Lanka,4527
+16,Supplier_16,supplier16@example.com,Germany,2162
+17,Supplier_17,supplier17@example.com,Sri Lanka,1065
+18,Supplier_18,supplier18@example.com,Germany,2752
+19,Supplier_19,supplier19@example.com,Sri Lanka,3489
+20,Supplier_20,supplier20@example.com,Germany,3311
+21,Supplier_21,supplier21@example.com,Sri Lanka,1282
+22,Supplier_22,supplier22@example.com,Germany,1358
+23,Supplier_23,supplier23@example.com,Sri Lanka,3533
+24,Supplier_24,supplier24@example.com,Germany,2735
+25,Supplier_25,supplier25@example.com,Sri Lanka,2629
+26,Supplier_26,supplier26@example.com,Germany,2150
+27,Supplier_27,supplier27@example.com,Sri Lanka,1583
+28,Supplier_28,supplier28@example.com,Germany,1778
+29,Supplier_29,supplier29@example.com,Sri Lanka,1726
+30,Supplier_30,supplier30@example.com,Germany,1751
+31,Supplier_31,supplier31@example.com,Sri Lanka,4331
+32,Supplier_32,supplier32@example.com,Germany,4534
+33,Supplier_33,supplier33@example.com,Sri Lanka,3932
+34,Supplier_34,supplier34@example.com,Germany,4547
+35,Supplier_35,supplier35@example.com,Sri Lanka,3569
+36,Supplier_36,supplier36@example.com,Germany,1498
+37,Supplier_37,supplier37@example.com,Sri Lanka,1175
+38,Supplier_38,supplier38@example.com,Germany,4460
+39,Supplier_39,supplier39@example.com,Sri Lanka,1269
+40,Supplier_40,supplier40@example.com,Germany,4099
+41,Supplier_41,supplier41@example.com,Sri Lanka,4913
+42,Supplier_42,supplier42@example.com,Germany,4502
+43,Supplier_43,supplier43@example.com,Sri Lanka,4553
+44,Supplier_44,supplier44@example.com,Germany,1568
+45,Supplier_45,supplier45@example.com,Sri Lanka,3664
+46,Supplier_46,supplier46@example.com,Germany,2662
+47,Supplier_47,supplier47@example.com,Sri Lanka,1914
+48,Supplier_48,supplier48@example.com,Germany,1212
+49,Supplier_49,supplier49@example.com,Sri Lanka,2962
+50,Supplier_50,supplier50@example.com,Germany,3385
