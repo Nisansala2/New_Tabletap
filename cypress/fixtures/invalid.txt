@@ -1,1 +1,1 @@
-Invalid text file content
+Invalid text file content is 

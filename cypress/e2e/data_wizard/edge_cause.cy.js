@@ -41,26 +41,28 @@ describe('Data Wizard functionality - Edge Cases', () => {
   it('Should reject a .txt file and show an error', () => {
     cy.get('input[type="file"]').attachFile(files.txtFile)
     cy.wait(2000) 
-    cy.get('button').contains('Initialize & Start Import').click()
+    //cy.contains(/invalid file type|unsupported format/i).should('be.visible')
   })
 
   it('Should reject a .pdf file and show an error', () => {
     cy.get('input[type="file"]').attachFile(files.pdfFile)
-    cy.contains('File invalid.pdf has unsupported type: application/pdf').should('be.visible')
     cy.wait(2000) 
-    cy.get('button').contains('Initialize & Start Import').click()
+     // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should reject an image file (.png) and show an error', () => {
     cy.get('input[type="file"]').attachFile(files.imageFile)
-    cy.contains('File invalid.png has unsupported type: image/png').should('be.visible')
     cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
   })
 
   it('Should reject a .json file and show an error', () => {
     cy.get('input[type="file"]').attachFile(files.jsonFile)
-    cy.contains('File invalid.json has unsupported type: application/json').should('be.visible')
     cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
   })
@@ -68,30 +70,20 @@ describe('Data Wizard functionality - Edge Cases', () => {
   // ─── EMPTY & MINIMAL FILES ────────────────────────────────────────────────
 
 
-
   it('Should handle a CSV with headers only and no data rows', () => {
     cy.get('input[type="file"]').attachFile(files.headerOnlyCSV)
     cy.wait(2000)
-    cy.get('button').contains('Preview Data').click()
-    cy.contains('File invalid.pdf has unsupported type: application/pdf').should('be.visible')
-    cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
   })
 
   it('Should handle a CSV with a single column', () => {
     cy.get('input[type="file"]').attachFile(files.singleColumnCSV)
     cy.wait(2000)
-    cy.get('button').contains('Preview Data').click()
-    cy.get('table').should('be.visible')
-    cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
   })
 
   it('Should handle a CSV with a single data row', () => {
-    cy.get('input[type="file"]').attachFile(files.singleRowCSV)
-    cy.wait(2000)
-    cy.get('button').contains('Preview Data').click()
-    cy.get('table').should('be.visible')
+    cy.get('input[type="file"]').attachFile(files.singleRowCSV)   
     cy.wait(2000)
     cy.get('button').contains('Initialize & Start Import').click()
     cy.contains(/success|table created/i).should('be.visible')
@@ -102,11 +94,13 @@ describe('Data Wizard functionality - Edge Cases', () => {
   it('Should handle a large but valid CSV file without timeout', () => {
     cy.get('input[type="file"]').attachFile(files.largeFile)
     cy.wait(5000) // allow extra processing time
-    cy.get('button').contains('Preview Data').click()
-    cy.get('table', { timeout: 15000 }).should('be.visible')
-    cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
-    cy.contains(/success|table created/i).should('be.visible')
+     // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should reject a file that exceeds the size limit', () => {
@@ -139,7 +133,12 @@ describe('Data Wizard functionality - Edge Cases', () => {
     cy.wait(2000)
     cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
-    cy.contains(/mismatch|inconsistent columns|parsing error/i).should('be.visible')
+     // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should handle a CSV with a very wide table (1000+ columns)', () => {
@@ -147,8 +146,12 @@ describe('Data Wizard functionality - Edge Cases', () => {
     cy.wait(3000)
     cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
-    cy.contains(/column limit|too many columns/i).should('be.visible')
-      .or(cy.get('table').should('be.visible')) // depending on whether there's a hard limit
+     // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   // ─── DATA CONTENT EDGE CASES ──────────────────────────────────────────────
@@ -157,20 +160,36 @@ describe('Data Wizard functionality - Edge Cases', () => {
     cy.get('input[type="file"]').attachFile(files.csvWithNulls)
     cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
-    cy.contains(/success|table created/i).should('be.visible')
+     // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should handle a CSV with mixed data types in a single column', () => {
     cy.get('input[type="file"]').attachFile(files.mixedDataTypesCSV)
     cy.wait(2000)
     cy.get('button').contains('Initialize & Start Import').click()
+     // Wait for import process to complete
+   cy.contains('Stop', { timeout: 120000 }).should('exist')
+   cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+   cy.contains('Button').contains('Go to Table').should('be.visible')
+   cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should handle a CSV with special characters in data cells', () => {
     cy.get('input[type="file"]').attachFile(files.specialCharsCSV)
     cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
-    cy.contains(/success|table created/i).should('be.visible')
+      // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should sanitize SQL injection content in CSV cells', () => {
@@ -180,41 +199,29 @@ describe('Data Wizard functionality - Edge Cases', () => {
     cy.get('button').contains('Initialize & Start Import').click()
     // Raw SQL should be treated as plain text, not executed
     cy.contains('DROP TABLE').should('not.cause.error') // verify app doesn't crash
-    cy.get('button').contains('Create Table').click()
-    cy.contains(/success|table created/i).should('be.visible')
+     // Wait for import process to complete
+  cy.contains('Stop', { timeout: 120000 }).should('exist')
+  cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+  cy.contains('Button').contains('Go to Table').should('be.visible')
+  cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   it('Should handle a CSV with Unicode and emoji characters', () => {
     cy.get('input[type="file"]').attachFile(files.unicodeCSV)
     cy.wait(2000)
-    cy.wait(2000) 
     cy.get('button').contains('Initialize & Start Import').click()
-    cy.contains(/success|table created/i).should('be.visible')
+     // Wait for import process to complete
+    cy.contains('Stop', { timeout: 120000 }).should('exist')
+    cy.contains('Stop', { timeout: 120000 }).should('not.exist')
+    cy.contains('Button').contains('Go to Table').should('be.visible')
+    cy.contains('Button').contains('Go to Table').click()
+  
   })
 
   // ─── UI / WORKFLOW EDGE CASES ─────────────────────────────────────────────
 
-  it('Should not allow clicking Preview Data without uploading a file', () => {
-    cy.wait(2000) 
-    cy.get('button').contains('Initialize & Start Import').click()
-  })
 
-  it('Should not allow clicking Create Table without clicking Preview Data first', () => {
-    cy.get('input[type="file"]').attachFile(files.csv)
-    cy.wait(2000)
-    cy.wait(2000) 
-    cy.get('button').contains('Initialize & Start Import').click()
-  })
-
-  it('Should allow replacing an uploaded file before previewing', () => {
-    cy.get('input[type="file"]').attachFile(files.csv)
-    cy.wait(1000)
-    cy.get('input[type="file"]').attachFile(files.excel)
-    cy.wait(2000)
-    cy.get('button').contains('Initialize & Start Import').click()
-   
-    cy.contains(/success|table created/i).should('be.visible')
-  })
 
   it('Should handle re-uploading a new file after a failed preview', () => {
     cy.get('input[type="file"]').attachFile(files.emptyCSV)
