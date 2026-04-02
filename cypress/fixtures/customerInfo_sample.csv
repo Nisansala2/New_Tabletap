@@ -1,0 +1,6 @@
+Customer ID,Customer Name,Contact Name,Email,Phone,Billing Address,City,Country,Industry
+CUST001,Acme Corporation,Robert Johnson,robert@acme.com,+1-555-0201,100 Commerce Blvd,Chicago,USA,Manufacturing
+CUST002,TechVision Solutions,Sarah Lee,sarah@techvision.com,+1-555-0202,200 Innovation Dr,San Francisco,USA,Technology
+CUST003,Global Retail Group,Pierre Dubois,pierre@globalretail.fr,+33-1-4567,300 Shopping Center,Paris,France,Retail
+CUST004,Industrial Works GmbH,Klaus Schmidt,klaus@indworks.de,+49-211-5555,400 Factory Rd,Dusseldorf,Germany,Manufacturing
+CUST005,Orient Express Ltd,Mr. Tanaka,tanaka@orientexp.jp,+81-3-1234,500 Trade Center,Tokyo,Japan,Logistics

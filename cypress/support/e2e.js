@@ -16,6 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+// Import cypress-file-upload plugin
+import 'cypress-file-upload'
+
 // Ignore a known production React runtime error (#418) coming from the app.
 // This keeps Cypress from failing due to an unrelated frontend exception.
 Cypress.on('uncaught:exception', (err) => {
